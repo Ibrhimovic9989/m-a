@@ -2,14 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bone: #F2EDE3;
-  --ivory: #F8F4EC;
-  --ink: #0E0E10;
-  --ash: #1A1A1D;
-  --smoke: #6B6760;
-  --amber: #B8853A;
-  --amber-soft: #D9B07A;
+/* ---------------------------------------------------------
+   Theme tokens — RGB channel values for Tailwind opacity.
+   Default = sepia (warm cream). Light = archival white.
+   Dark = cream-on-ink with inverted dark blocks.
+--------------------------------------------------------- */
+
+:root,
+[data-theme="sepia"] {
+  --bone: 242 237 227;
+  --ivory: 248 244 236;
+  --ink: 14 14 16;
+  --ash: 26 26 29;
+  --smoke: 107 103 96;
+  --amber: 184 133 58;
+  --amber-soft: 217 176 122;
+  --amber-dark: 124 88 38;
+}
+
+[data-theme="light"] {
+  --bone: 250 250 248;
+  --ivory: 255 255 255;
+  --ink: 14 14 16;
+  --ash: 26 26 29;
+  --smoke: 107 107 107;
+  --amber: 168 110 38;
+  --amber-soft: 210 161 105;
+  --amber-dark: 102 67 22;
+}
+
+[data-theme="dark"] {
+  --bone: 14 14 16;
+  --ivory: 26 26 29;
+  --ink: 242 237 227;
+  --ash: 248 244 236;
+  --smoke: 138 133 126;
+  --amber: 217 176 122;
+  --amber-soft: 232 200 156;
+  --amber-dark: 184 133 58;
 }
 
 * {
@@ -18,14 +48,15 @@
 }
 
 html, body {
-  background: var(--bone);
-  color: var(--ink);
+  background: rgb(var(--bone));
+  color: rgb(var(--ink));
   font-feature-settings: "ss01", "cv11";
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
-  background: var(--ink);
-  color: var(--bone);
+  background: rgb(var(--ink));
+  color: rgb(var(--bone));
 }
 
 @layer utilities {
@@ -41,6 +72,10 @@ html, body {
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
+  [data-theme="dark"] .grain::after {
+    mix-blend-mode: screen;
+    opacity: 0.08;
+  }
 
   .text-balance {
     text-wrap: balance;
@@ -48,12 +83,12 @@ html, body {
 
   .hairline {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(14, 14, 16, 0.18), transparent);
+    background: linear-gradient(to right, transparent, rgb(var(--ink) / 0.18), transparent);
   }
 
   .vline {
     width: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(14, 14, 16, 0.18), transparent);
+    background: linear-gradient(to bottom, transparent, rgb(var(--ink) / 0.18), transparent);
   }
 
   .arrow-link {

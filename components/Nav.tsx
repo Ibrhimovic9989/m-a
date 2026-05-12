@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -62,6 +63,9 @@ export default function Nav() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
+            <div className="hidden md:inline-flex">
+              <ThemeSwitcher />
+            </div>
             <a
               href="#contact"
               className="hidden md:inline-flex group items-center gap-2 px-4 py-2 rounded-full bg-ink text-bone text-[12px] tracking-tight hover:bg-amber hover:text-ink transition-all duration-500"
@@ -130,6 +134,12 @@ export default function Nav() {
           >
             Book a consult →
           </a>
+          <div className="pt-5 flex items-center gap-3">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-smoke">
+              Theme
+            </span>
+            <ThemeSwitcher />
+          </div>
         </nav>
       </div>
     </header>

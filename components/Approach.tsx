@@ -37,7 +37,7 @@ export default function Approach() {
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 20%, #B8853A 0%, transparent 40%), radial-gradient(circle at 80% 80%, #B8853A 0%, transparent 35%)",
+              "radial-gradient(circle at 20% 20%, rgb(var(--amber)) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgb(var(--amber)) 0%, transparent 35%)",
           }}
         />
       </div>

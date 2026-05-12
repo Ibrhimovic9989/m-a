@@ -8,15 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bone: "#F2EDE3",
-        ivory: "#F8F4EC",
-        ink: "#0E0E10",
-        ash: "#1A1A1D",
-        smoke: "#6B6760",
+        bone: "rgb(var(--bone) / <alpha-value>)",
+        ivory: "rgb(var(--ivory) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        ash: "rgb(var(--ash) / <alpha-value>)",
+        smoke: "rgb(var(--smoke) / <alpha-value>)",
         amber: {
-          DEFAULT: "#B8853A",
-          soft: "#D9B07A",
-          dark: "#7C5826",
+          DEFAULT: "rgb(var(--amber) / <alpha-value>)",
+          soft: "rgb(var(--amber-soft) / <alpha-value>)",
+          dark: "rgb(var(--amber-dark) / <alpha-value>)",
         },
         moss: "#2C3A2E",
       },

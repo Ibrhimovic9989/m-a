@@ -21,7 +21,7 @@ export default function Firm() {
                 className="absolute inset-0 mix-blend-multiply opacity-40 pointer-events-none"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(184,133,58,0.15) 0%, rgba(14,14,16,0.55) 100%)",
+                    "linear-gradient(180deg, rgb(var(--amber) / 0.15) 0%, rgb(14 14 16 / 0.55) 100%)",
                 }}
               />
 

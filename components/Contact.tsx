@@ -21,7 +21,7 @@ export default function Contact() {
           className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(184,133,58,0.18) 0%, transparent 60%)",
+              "radial-gradient(circle, rgb(var(--amber) / 0.18) 0%, transparent 60%)",
           }}
         />
       </div>
