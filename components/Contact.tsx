@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-// Replace this with the firm's actual Cal.com event link once the account is
-// set up. Format: "<username>/<event-slug>" — e.g. "muneer-associates/consultation".
-// The iframe will load https://cal.com/<CAL_LINK>?embed=true.
-const CAL_LINK =
-  process.env.NEXT_PUBLIC_CAL_LINK || "muneer-associates/consultation";
+// Cal.com event link rendered inside the booking iframe.
+// Override per environment via NEXT_PUBLIC_CAL_LINK in Vercel.
+// Format: "<username>/<event-type-slug>".
+const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || "ca-muneer-ahmed/30min";
 
 const PHONES = ["+91 99859 09898", "+91 75692 33364", "+91 91605 82865"];
 
