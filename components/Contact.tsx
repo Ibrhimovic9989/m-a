@@ -1,29 +1,53 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Cal, { getCalApi } from "@calcom/embed-react";
 
-// Cal.com event link rendered inside the booking iframe.
-// Override per environment via NEXT_PUBLIC_CAL_LINK in Vercel.
+// Cal.com event link rendered inside the embed.
 // Format: "<username>/<event-type-slug>".
-const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || "ca-muneer-ahmed/30min";
+// Override per environment via NEXT_PUBLIC_CAL_LINK in Vercel.
+const CAL_LINK = process.env.NEXT_PUBLIC_CAL_LINK || "info-zydfog/30min";
+const CAL_NAMESPACE = "30min";
 
 const PHONES = ["+91 99859 09898", "+91 75692 33364", "+91 91605 82865"];
 
 export default function Contact() {
-  const [calTheme, setCalTheme] = useState<"light" | "dark">("light");
-
+  // Wire the Cal.com UI: month view, no detail panel, and a theme that
+  // tracks the page's data-theme attribute live.
   useEffect(() => {
-    const update = () => {
-      const t = document.documentElement.getAttribute("data-theme");
-      setCalTheme(t === "dark" ? "dark" : "light");
+    let observer: MutationObserver | null = null;
+    let cancelled = false;
+
+    const calTheme = (): "light" | "dark" =>
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+
+    (async () => {
+      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
+      if (cancelled) return;
+
+      const apply = () => {
+        cal("ui", {
+          hideEventTypeDetails: false,
+          layout: "month_view",
+          theme: calTheme(),
+        });
+      };
+
+      apply();
+
+      observer = new MutationObserver(apply);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      });
+    })();
+
+    return () => {
+      cancelled = true;
+      observer?.disconnect();
     };
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-theme"],
-    });
-    return () => observer.disconnect();
   }, []);
 
   return (
@@ -63,18 +87,22 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
-          {/* Cal.com embed */}
+          {/* Cal.com inline embed */}
           <div className="lg:col-span-8">
-            {/* Embed frame — subtle border + drop shadow so the iframe feels
-                seated in the page rather than tacked on. */}
-            <div className="relative rounded-lg overflow-hidden border border-bone/15 shadow-[0_30px_60px_-20px_rgb(0_0_0_/_0.35)] bg-bone">
-              <iframe
-                key={calTheme}
-                src={`https://cal.com/${CAL_LINK}?embed=true&theme=${calTheme}&layout=month_view`}
-                title="Schedule an appointment with Muneer & Associates"
-                className="block w-full h-[760px] bg-bone"
-                allow="camera *; microphone *; autoplay *; encrypted-media *; fullscreen *; display-capture *"
-                loading="lazy"
+            <div className="relative rounded-lg overflow-hidden border border-bone/15 shadow-[0_30px_60px_-20px_rgb(0_0_0_/_0.35)] bg-bone min-h-[720px]">
+              <Cal
+                namespace={CAL_NAMESPACE}
+                calLink={CAL_LINK}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  minHeight: "720px",
+                  overflow: "scroll",
+                }}
+                config={{
+                  layout: "month_view",
+                  useSlotsViewOnSmallScreen: "true",
+                }}
               />
             </div>
             <p className="mt-4 text-[12px] uppercase tracking-[0.22em] text-bone/55 flex items-center gap-2.5">
@@ -168,9 +196,6 @@ export default function Contact() {
                 Sundays &amp; public holidays — by appointment
               </p>
             </div>
-
-            {/* Cal.com setup hint — visible only at dev time via a comment.
-                Replace CAL_LINK above with your real cal.com event slug. */}
           </aside>
         </div>
       </div>
