@@ -98,7 +98,9 @@ export default function BulletinsIndexPage() {
                 </h3>
                 <p className="text-[14px] leading-[1.55] text-ink/70 mb-6">
                   {c.available
-                    ? "Latest notifications, circulars and press releases."
+                    ? c.note
+                      ? "Legacy head. Most notifications now under GST."
+                      : "Latest notifications, circulars and press releases."
                     : "Catalogue empty at source — coming soon."}
                 </p>
 

@@ -12,6 +12,9 @@ export type BulletinCategory = {
   short: string;
   url: string;
   available: boolean;
+  // Optional contextual note shown on a category page when the source is
+  // empty (e.g. heads subsumed by GST in 2017 that no longer see issuances).
+  note?: string;
 };
 
 // Category list mirrors dcgargco's "Bulletins" dropdown.
@@ -53,6 +56,7 @@ export const BULLETIN_CATEGORIES: BulletinCategory[] = [
     short: "Service Tax",
     url: "https://www.dcgargco.com/advancesearch/notification/Bulletins/Service_Tax/Service_Tax.aspx",
     available: true,
+    note: "Service Tax was subsumed by GST on 1 July 2017. New issuances appear under the GST head; only legacy circulars are listed here.",
   },
   {
     slug: "central-sales-tax",
@@ -60,6 +64,7 @@ export const BULLETIN_CATEGORIES: BulletinCategory[] = [
     short: "CST",
     url: "https://www.dcgargco.com/advancesearch/notification/Bulletins/Central_Sales_Tax/Central_Sales_Tax.aspx",
     available: true,
+    note: "Central Sales Tax has been largely subsumed by IGST since July 2017. Most cross-state issuances now appear under the IGST or GST heads.",
   },
   {
     slug: "excise",
@@ -67,6 +72,7 @@ export const BULLETIN_CATEGORIES: BulletinCategory[] = [
     short: "Excise",
     url: "https://www.dcgargco.com/advancesearch/notification/Bulletins/Excise_Matters/Excise_Matters.aspx",
     available: true,
+    note: "Central Excise was subsumed by GST in 2017, except for petroleum, tobacco and a few specified goods. Notifications here are limited.",
   },
   {
     slug: "customs",
@@ -123,6 +129,7 @@ export const BULLETIN_CATEGORIES: BulletinCategory[] = [
     short: "VAT",
     url: "https://www.dcgargco.com/advancesearch/notification/Bulletins/Delhi_VAT/Delhi_VAT.aspx",
     available: true,
+    note: "State VAT was subsumed by GST in 2017. Only legacy Delhi VAT notifications are mirrored here.",
   },
   {
     slug: "igst",
@@ -175,6 +182,14 @@ export type BulletinDetail = {
   number: string | null;
   date: string | null;
   bodyHtml: string;
+};
+
+export type BulletinListResult = {
+  items: BulletinListItem[];
+  // Total reported by the source's RadGrid pager ("Total Search Found : N").
+  // When this is 0 the source itself has no items under this head — distinct
+  // from a fetch error or a parse miss on our end.
+  sourceTotal: number;
 };
 
 export type FetchResult<T> =
@@ -250,14 +265,29 @@ function parseListHtml(html: string): BulletinListItem[] {
   return items;
 }
 
+function parseSourceTotal(html: string): number {
+  // The source page renders "Total Search Found : N" in its result summary.
+  // We use this to tell "the source has nothing under this head" apart from
+  // "we hit a parse miss".
+  const m = html.match(/Total\s+Search\s+Found\s*:?\s*(\d+)/i);
+  return m ? parseInt(m[1], 10) : NaN;
+}
+
 export async function fetchBulletinList(
   category: BulletinCategory,
-): Promise<FetchResult<BulletinListItem[]>> {
+): Promise<FetchResult<BulletinListResult>> {
   if (!category.available) return { ok: false, error: "unavailable" };
   const html = await fetchWithTimeout(category.url);
   if (!html) return { ok: false, error: "fetch_failed" };
   const items = parseListHtml(html);
-  return { ok: true, data: items };
+  const sourceTotal = parseSourceTotal(html);
+  return {
+    ok: true,
+    data: {
+      items,
+      sourceTotal: Number.isNaN(sourceTotal) ? items.length : sourceTotal,
+    },
+  };
 }
 
 function extractMeta(detailHtml: string): {

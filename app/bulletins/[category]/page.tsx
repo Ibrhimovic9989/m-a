@@ -37,9 +37,16 @@ export default async function CategoryListPage({
   if (!category) notFound();
 
   const result = await fetchBulletinList(category);
-  const items = result.ok ? result.data : [];
+  const items = result.ok ? result.data.items : [];
+  const sourceTotal = result.ok ? result.data.sourceTotal : 0;
   const errored = !result.ok && result.error !== "unavailable";
   const unavailable = !result.ok && result.error === "unavailable";
+  // Source explicitly reported zero results — distinct from a parse miss.
+  const sourceEmpty = result.ok && items.length === 0 && sourceTotal === 0;
+  // We fetched fine and the source has rows, but our parser returned nothing —
+  // the only case where "format may have shifted" wording is honest.
+  const parseMissed =
+    result.ok && items.length === 0 && sourceTotal > 0;
 
   return (
     <main className="relative">
@@ -91,10 +98,22 @@ export default async function CategoryListPage({
                   ? `The ${category.name} feed is not yet populated at source. Check back later or browse a related head.`
                   : errored
                   ? "We could not reach the source feed just now. Refresh in a moment, or open the page on dcgargco.com directly."
+                  : sourceEmpty
+                  ? `No notifications currently listed under ${category.name} at source.`
+                  : parseMissed
+                  ? `${sourceTotal} ${
+                      sourceTotal === 1 ? "item" : "items"
+                    } reported at source, but we couldn't parse them. Open the page on dcgargco.com directly.`
                   : `Latest ${items.length} ${
                       items.length === 1 ? "item" : "items"
                     } from the ${category.name} feed — sourced live from dcgargco.com and refreshed hourly.`}
               </p>
+
+              {sourceEmpty && category.note && (
+                <p className="mt-4 text-[13px] lg:text-[14px] leading-[1.55] text-smoke max-w-[720px]">
+                  {category.note}
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -110,7 +129,9 @@ export default async function CategoryListPage({
                   ? "No items yet. The original catalogue at dcgargco.com lists this head but has not yet published any notifications. Come back soon."
                   : errored
                   ? "We hit a transient error fetching the feed. Reload to try again, or visit the source page directly."
-                  : "No items returned. The source feed may have shifted format — please report this if it persists."}
+                  : parseMissed
+                  ? "The source reports notifications under this head but our parser returned nothing — the upstream markup may have shifted. We'll fix this shortly. In the meantime, the source page on dcgargco.com is below."
+                  : "No notifications are currently published under this head at source. Recent issuances may appear under a related head — browse the list below."}
               </p>
               <a
                 href={category.url}
