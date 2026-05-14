@@ -136,6 +136,82 @@ html, body {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
   }
+
+  /* Typography for embedded bulletin HTML (notifications, circulars). The
+     source uses inline-styled tables and Calibri/Arial — we strip those
+     attributes server-side, then re-style structurally here. */
+  .bulletin-body p {
+    margin: 0 0 1em 0;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .bulletin-body h1,
+  .bulletin-body h2,
+  .bulletin-body h3 {
+    font-family: var(--font-geist), serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin: 1.5em 0 0.6em 0;
+    color: rgb(var(--ink));
+  }
+  .bulletin-body h1 { font-size: 1.4em; }
+  .bulletin-body h2 { font-size: 1.25em; }
+  .bulletin-body h3 { font-size: 1.1em; }
+  .bulletin-body a {
+    color: rgb(var(--amber-dark));
+    border-bottom: 1px solid rgb(var(--amber-dark) / 0.3);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .bulletin-body a:hover {
+    color: rgb(var(--ink));
+    border-color: rgb(var(--ink));
+  }
+  .bulletin-body ol,
+  .bulletin-body ul {
+    margin: 0.5em 0 1em 1.5em;
+    padding: 0;
+  }
+  .bulletin-body ol { list-style: decimal; }
+  .bulletin-body ul { list-style: disc; }
+  .bulletin-body li {
+    margin-bottom: 0.4em;
+    line-height: 1.6;
+  }
+  .bulletin-body table {
+    width: 100%;
+    margin: 1em 0;
+    border-collapse: collapse;
+    font-size: 0.95em;
+  }
+  .bulletin-body table td,
+  .bulletin-body table th {
+    border: 1px solid rgb(var(--ink) / 0.15);
+    padding: 8px 12px;
+    vertical-align: top;
+  }
+  .bulletin-body table th {
+    background: rgb(var(--bone));
+    font-weight: 600;
+    text-align: left;
+  }
+  .bulletin-body hr {
+    border: 0;
+    border-top: 1px solid rgb(var(--ink) / 0.12);
+    margin: 1.5em 0;
+  }
+  .bulletin-body sup {
+    font-size: 0.8em;
+    vertical-align: super;
+  }
+  .bulletin-body span {
+    color: inherit !important;
+    background: transparent !important;
+  }
+  .bulletin-body img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 html {

@@ -16,20 +16,28 @@ const RESOURCES = [
     href: "/utilities",
   },
   {
-    tag: "Acts & Rules",
-    title: "Bare Acts and Rule Sets",
+    tag: "Bare Acts",
+    title: "The Statute Book",
     body:
       "Direct tax, indirect tax, corporate law, VAT, GST and the allied statute book — organised by head, with status flags for what is in force, partially in force, or subsumed by GST.",
-    cta: "Browse the library",
+    cta: "Browse the Acts",
     href: "/acts",
   },
   {
-    tag: "Bulletins",
-    title: "Notifications, Circulars & Case Law",
+    tag: "Rules & Regulations",
+    title: "Subordinate Legislation",
     body:
-      "A curated feed of CBDT and CBIC notifications, MCA circulars and recent rulings — with brief notes from our team on what they actually mean.",
+      "The Rules, Regulations, Schemes and Orders made under each statute — Income-tax Rules, Companies Rules, CGST Rules, FEMA Regulations, SEBI Regulations and the state Rules. Every form, every procedure, every Notification thread.",
+    cta: "Browse the Rules",
+    href: "/rules",
+  },
+  {
+    tag: "Bulletins",
+    title: "Notifications, Circulars & Press",
+    body:
+      "A live feed of RBI, SEBI, CBDT, CBIC, MCA and allied issuances — organised across nineteen heads, refreshed hourly. The same board we consult before signing any opinion.",
     cta: "Read the bulletins",
-    href: "#contact",
+    href: "/bulletins",
   },
   {
     tag: "Calendar",
@@ -81,7 +89,8 @@ export default function Knowledge() {
                   ⌖ {r.tag}
                 </span>
                 <span className="font-mono text-[11px] text-smoke">
-                  {String(i + 1).padStart(2, "0")} / 05
+                  {String(i + 1).padStart(2, "0")} /{" "}
+                  {String(RESOURCES.length).padStart(2, "0")}
                 </span>
               </div>
 
