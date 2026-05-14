@@ -16,6 +16,7 @@
 export type ServiceItem = {
   name: string;
   featured?: boolean; // has detailed docx documentation in /docs/
+  slug?: string; // when present, links to /services/<slug>
 };
 
 export type ServiceCategory = {
@@ -44,23 +45,23 @@ export const SERVICES_CATALOG: ServiceCategory[] = [
       { name: "Partnership Registration" },
       { name: "Trust / Society / NGO" },
       { name: "Section 12A / 80G Registration" },
-      { name: "FCRA Registration", featured: true },
+      { name: "FCRA Registration", featured: true, slug: "fcra-registration" },
       { name: "Start-up India Registration" },
       { name: "Section 80AC Registration" },
       { name: "Section 56 Registration" },
-      { name: "Labour License", featured: true },
-      { name: "Professional Tax (PT) Registration", featured: true },
-      { name: "MSME Registration", featured: true },
-      { name: "Trademark Registration", featured: true },
-      { name: "Copyright Registration", featured: true },
-      { name: "Patent Registration", featured: true },
-      { name: "ISO Certification", featured: true },
-      { name: "GST Registration & LUT", featured: true },
-      { name: "IEC — Import Export Code", featured: true },
-      { name: "ESI Registration", featured: true },
-      { name: "PF Registration", featured: true },
-      { name: "Trade License", featured: true },
-      { name: "FSSAI Food License", featured: true },
+      { name: "Labour License", featured: true, slug: "labour-license" },
+      { name: "Professional Tax (PT) Registration", featured: true, slug: "professional-tax" },
+      { name: "MSME Registration", featured: true, slug: "msme-registration" },
+      { name: "Trademark Registration", featured: true, slug: "trademark-registration" },
+      { name: "Copyright Registration", featured: true, slug: "copyright-registration" },
+      { name: "Patent Registration", featured: true, slug: "patent-registration" },
+      { name: "ISO Certification", featured: true, slug: "iso-certification" },
+      { name: "GST Registration & LUT", featured: true, slug: "gst-registration" },
+      { name: "IEC — Import Export Code", featured: true, slug: "iec-registration" },
+      { name: "ESI Registration", featured: true, slug: "esi-registration" },
+      { name: "PF Registration", featured: true, slug: "pf-registration" },
+      { name: "Trade License", featured: true, slug: "trade-license" },
+      { name: "FSSAI Food License", featured: true, slug: "fssai-license" },
       { name: "RERA Registration" },
     ],
   },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { SERVICES_CATALOG } from "@/lib/services-catalog";
 
 export default function Services() {
@@ -126,39 +127,62 @@ export default function Services() {
                           ⌖ Catalog
                         </p>
                         <ul className="columns-1 sm:columns-2 lg:columns-3 gap-x-8 lg:gap-x-10 [column-fill:_balance]">
-                          {cat.items.map((it, j) => (
-                            <li
-                              key={j}
-                              className="break-inside-avoid flex gap-3 mb-2.5 text-[14.5px] leading-[1.45] text-ink/85"
-                            >
-                              <span
-                                className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300 ${
-                                  it.featured ? "bg-amber" : "bg-ink/30"
-                                }`}
-                              />
-                              <span className="flex-1">
-                                {it.name}
-                                {it.featured && (
-                                  <span
-                                    title="Detailed documentation available"
-                                    aria-label="Detailed documentation available"
-                                    className="ml-1.5 inline-block align-middle text-amber-dark text-[10px] tracking-[0.18em] uppercase opacity-70 hover:opacity-100 transition-opacity"
-                                  >
-                                    ⌖
-                                  </span>
-                                )}
+                          {cat.items.map((it, j) => {
+                            const inner = (
+                              <span className="flex gap-3 text-[14.5px] leading-[1.45] text-ink/85">
+                                <span
+                                  className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 transition-colors duration-300 ${
+                                    it.featured ? "bg-amber" : "bg-ink/30"
+                                  }`}
+                                />
+                                <span className="flex-1">
+                                  {it.name}
+                                  {it.slug && (
+                                    <span
+                                      aria-label="Read more"
+                                      className="ml-1.5 inline-block align-middle text-amber-dark text-[10px] tracking-[0.18em] uppercase opacity-70 group-hover/item:opacity-100 transition-opacity"
+                                    >
+                                      ↗
+                                    </span>
+                                  )}
+                                  {it.featured && !it.slug && (
+                                    <span
+                                      title="Detailed documentation available"
+                                      aria-label="Detailed documentation available"
+                                      className="ml-1.5 inline-block align-middle text-amber-dark text-[10px] tracking-[0.18em] uppercase opacity-70"
+                                    >
+                                      ⌖
+                                    </span>
+                                  )}
+                                </span>
                               </span>
-                            </li>
-                          ))}
+                            );
+                            return (
+                              <li
+                                key={j}
+                                className="break-inside-avoid mb-2.5"
+                              >
+                                {it.slug ? (
+                                  <Link
+                                    href={`/services/${it.slug}`}
+                                    className="group/item block rounded-sm -mx-1.5 px-1.5 py-0.5 hover:bg-ink/[0.04] [&_.flex-1]:group-hover/item:text-ink transition-colors duration-200"
+                                  >
+                                    {inner}
+                                  </Link>
+                                ) : (
+                                  inner
+                                )}
+                              </li>
+                            );
+                          })}
                         </ul>
 
                         {featuredCount > 0 && (
                           <p className="mt-7 text-[11.5px] tracking-tight text-smoke leading-[1.5] max-w-[560px]">
-                            <span className="text-amber-dark">⌖</span>{" "}
-                            Items marked above have full per-service
-                            documentation — eligibility, scope, what we file,
-                            what you upload. Ask during the consult or request
-                            the brochure for a printable summary.
+                            <span className="text-amber-dark">↗</span>{" "}
+                            Items marked above are documented in full —
+                            eligibility, scope, our package and the process.
+                            Click to read the brief.
                           </p>
                         )}
                       </div>
