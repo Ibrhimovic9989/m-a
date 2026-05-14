@@ -5,6 +5,7 @@ const RESOURCES = [
     body:
       "A working library of utilities — income tax, advance tax, HRA, gratuity, GST late-fee, EMI, NPS — used in our own engagements every day.",
     cta: "Open the toolkit",
+    href: "#contact",
   },
   {
     tag: "Acts & Rules",
@@ -12,6 +13,7 @@ const RESOURCES = [
     body:
       "Companies Act, Income Tax Act, GST Acts, RBI directions and the major allied rules — searchable, indexed, and kept current.",
     cta: "Browse the library",
+    href: "#contact",
   },
   {
     tag: "Bulletins",
@@ -19,13 +21,15 @@ const RESOURCES = [
     body:
       "A curated feed of CBDT and CBIC notifications, MCA circulars and recent rulings — with brief notes from our team on what they actually mean.",
     cta: "Read the bulletins",
+    href: "#contact",
   },
   {
     tag: "Calendar",
     title: "Statutory Due-Date Calendar",
     body:
-      "A rolling twelve-month view of every filing deadline a typical Indian business needs to plan around. Subscribable, exportable.",
-    cta: "View the calendar",
+      "A rolling twelve-month view of every filing deadline a typical Indian business needs to plan around — cross-referenced with CBIC, CBDT, MCA and EPFO notifications.",
+    cta: "Open the calendar",
+    href: "/calendar",
   },
 ];
 
@@ -61,7 +65,7 @@ export default function Knowledge() {
           {RESOURCES.map((r, i) => (
             <a
               key={i}
-              href="#contact"
+              href={r.href}
               className="group relative bg-bone p-7 lg:p-9 border border-ink/[0.08] hover:border-ink/30 transition-all duration-500 overflow-hidden"
             >
               <div className="flex items-start justify-between mb-8">
