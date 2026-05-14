@@ -3,17 +3,25 @@ const RESOURCES = [
     tag: "Calculators",
     title: "Tax, EMI, GST & Investment Calculators",
     body:
-      "A working library of utilities — income tax, advance tax, HRA, gratuity, GST late-fee, EMI, NPS — used in our own engagements every day.",
+      "A working library of calculators — income tax, advance tax, HRA, GST, EMI, NSC, RERA — used in our own engagements every day.",
     cta: "Open the toolkit",
-    href: "#contact",
+    href: "/calculators",
+  },
+  {
+    tag: "Utilities",
+    title: "Reference Tables & Lookup Codes",
+    body:
+      "Seventeen reference tables we keep open on the second monitor — TDS, depreciation, CII, ROC and LLP fees, stamp duty, HSN, IFSC, MICR and NIC. Current to FY 2025-26.",
+    cta: "Browse utilities",
+    href: "/utilities",
   },
   {
     tag: "Acts & Rules",
     title: "Bare Acts and Rule Sets",
     body:
-      "Companies Act, Income Tax Act, GST Acts, RBI directions and the major allied rules — searchable, indexed, and kept current.",
+      "Direct tax, indirect tax, corporate law, VAT, GST and the allied statute book — organised by head, with status flags for what is in force, partially in force, or subsumed by GST.",
     cta: "Browse the library",
-    href: "#contact",
+    href: "/acts",
   },
   {
     tag: "Bulletins",
@@ -73,7 +81,7 @@ export default function Knowledge() {
                   ⌖ {r.tag}
                 </span>
                 <span className="font-mono text-[11px] text-smoke">
-                  {String(i + 1).padStart(2, "0")} / 04
+                  {String(i + 1).padStart(2, "0")} / 05
                 </span>
               </div>
 
