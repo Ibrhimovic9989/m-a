@@ -286,20 +286,27 @@ function extractMeta(detailHtml: string): {
 }
 
 function extractBody(detailHtml: string): string {
-  // Detail content lives inside <td id="Data">...</td>; strip the inner <html>/<head>
-  // wrapper that dcgargco embeds and return the body markup.
-  const dataMatch = detailHtml.match(/<td[^>]*id="Data"[^>]*>([\s\S]*?)<\/td>/i);
-  if (!dataMatch) return "";
-  let inner = dataMatch[1];
-
-  // The inner contains a full <html>...<body>...</body></html>; extract body.
-  const bodyMatch = inner.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  if (bodyMatch) inner = bodyMatch[1];
+  // The bulletin sits inside <td id="Data"> as a fully-formed inner document
+  // (<html><head><style>…</style></head><body>…</body></html>). We can't use
+  // a non-greedy `<td id="Data">…</td>` regex to capture it because the inner
+  // document contains its own nested <td> tags — the match stops at the first
+  // one (the "(167 kb)" PDF-link cell) and the rest is dropped. Instead, find
+  // the inner <body>…</body> directly, scoped to start after the Data cell.
+  const dataIdx = detailHtml.search(/<td[^>]*id="Data"[^>]*>/i);
+  if (dataIdx < 0) return "";
+  const tail = detailHtml.slice(dataIdx);
+  const bodyMatch = tail.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  if (!bodyMatch) return "";
+  let inner = bodyMatch[1];
 
   // Strip the embedded <style> block — we render content with our own typography.
   inner = inner.replace(/<style[\s\S]*?<\/style>/gi, "");
 
   // Strip all inline class/style attrs so it inherits our typography.
+  // NOTE: deliberately do NOT strip <a name="…">…</a> wholesale — dcgargco
+  // sometimes wraps real content inside a named-anchor fragment marker, and
+  // the non-greedy variant would eat that content. Only empty bookmarks are
+  // safe to remove.
   inner = inner
     .replace(/\sclass="[^"]*"/g, "")
     .replace(/\sstyle="[^"]*"/g, "")
@@ -308,7 +315,7 @@ function extractBody(detailHtml: string): string {
     .replace(/\scellpadding="[^"]*"/g, "")
     .replace(/\scellspacing="[^"]*"/g, "")
     .replace(/\swidth="[^"]*"/g, "")
-    .replace(/<a name="[^"]*">[\s\S]*?<\/a>/g, "")
+    .replace(/<a name="[^"]*">\s*<\/a>/g, "")
     // Drop embedded base64 images (close-buttons, icons).
     .replace(/<img[^>]*src="data:[^"]*"[^>]*\/?>/g, "");
 
