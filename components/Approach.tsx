@@ -45,23 +45,23 @@ export default function Approach() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20">
           <div className="lg:col-span-7">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-amber-soft mb-5">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-amber-soft mb-5">
               ⌖ &nbsp;003 &nbsp;/&nbsp; Approach
             </p>
             <h2 className="font-display text-[40px] sm:text-[52px] lg:text-[72px] leading-[0.95] tracking-tightest font-medium">
-              We move slowly,<br />
+              We work patiently,<br />
               <span className="italic font-light text-amber-soft">
-                so the numbers
+                so your numbers
               </span>{" "}
-              don&rsquo;t.
+              move with pace.
             </h2>
           </div>
           <div className="lg:col-span-4 lg:col-start-9 flex items-end">
-            <p className="text-[14px] leading-[1.6] text-bone/70 text-balance">
-              The work of a chartered accountant is, at its best, invisible —
-              quiet returns filed, books closed cleanly, audits delivered on
-              the day they were promised. That invisibility is built four
-              steps at a time.
+            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-bone/75 prose-j">
+              Good accountancy is, at its best, invisible work — returns filed
+              without drama, books closed cleanly, audits delivered on the day
+              they were promised. That kind of quiet excellence isn&rsquo;t
+              accidental. It is built four steps at a time.
             </p>
           </div>
         </div>
@@ -74,19 +74,19 @@ export default function Approach() {
               className="group relative bg-ink p-8 lg:p-9 min-h-[260px] flex flex-col justify-between transition-colors duration-500 hover:bg-ash"
             >
               <div className="flex items-start justify-between">
-                <span className="font-display text-[12px] tracking-[0.3em] text-amber-soft">
+                <span className="font-display text-[13px] tracking-[0.3em] text-amber-soft">
                   {s.n}
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.24em] text-bone/40">
+                <span className="text-[11px] uppercase tracking-[0.24em] text-bone/50">
                   Step {i + 1}
                 </span>
               </div>
 
               <div>
-                <h3 className="font-display text-[32px] lg:text-[40px] leading-[0.95] tracking-tightest font-medium mb-3 text-bone">
+                <h3 className="font-display text-[34px] lg:text-[42px] leading-[0.95] tracking-tightest font-medium mb-4 text-bone">
                   {s.title}
                 </h3>
-                <p className="text-[12.5px] leading-[1.55] text-bone/65 text-balance">
+                <p className="text-[14.5px] leading-[1.6] text-bone/75 prose-j">
                   {s.body}
                 </p>
               </div>

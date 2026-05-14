@@ -97,20 +97,19 @@ export default function Services() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20">
-          <div className="lg:col-span-5">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-smoke mb-5">
+          <div className="lg:col-span-7">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-smoke mb-5">
               ⌖ &nbsp;002 &nbsp;/&nbsp; Services
             </p>
-            <h2 className="font-display text-[40px] sm:text-[52px] lg:text-[68px] leading-[0.95] tracking-tightest font-medium">
-              Seven<br />
-              <span className="italic font-light text-amber-dark">disciplines.</span><br />
-              One firm.
+            <h2 className="font-display text-[36px] sm:text-[48px] lg:text-[60px] xl:text-[64px] leading-[1.02] tracking-tightest font-medium">
+              Seven <span className="italic font-light text-amber-dark">disciplines.</span> One firm.
             </h2>
           </div>
-          <div className="lg:col-span-5 lg:col-start-8 flex items-end">
-            <p className="text-[15px] lg:text-[16px] leading-[1.55] text-ink/75 text-balance">
-              Each practice area is led by a qualified chartered accountant with a
-              decade of operating context. We don&rsquo;t outsource the thinking.
+          <div className="lg:col-span-4 lg:col-start-9 flex items-end">
+            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-ink/80 prose-j">
+              Every practice area is led by experienced personnel with a decade
+              of operating context — so the advice you receive is considered,
+              not outsourced.
             </p>
           </div>
         </div>
@@ -128,19 +127,19 @@ export default function Services() {
               >
                 <button
                   onClick={() => setActive(isOpen ? -1 : i)}
-                  className="w-full text-left grid grid-cols-12 gap-4 lg:gap-6 items-baseline py-6 lg:py-7 px-2 lg:px-5 group"
+                  className="w-full text-left grid grid-cols-12 gap-4 lg:gap-6 items-baseline py-7 lg:py-8 px-2 lg:px-5 group"
                 >
-                  <span className="col-span-2 lg:col-span-1 text-[11px] tracking-[0.2em] text-smoke font-mono">
+                  <span className="col-span-2 lg:col-span-1 text-[12px] tracking-[0.2em] text-smoke font-mono">
                     {s.num}
                   </span>
                   <h3
-                    className={`col-span-8 lg:col-span-7 text-[20px] sm:text-[26px] lg:text-[32px] tracking-tightest leading-[1.05] transition-colors duration-500 ${
+                    className={`col-span-8 lg:col-span-7 text-[22px] sm:text-[28px] lg:text-[34px] tracking-tightest leading-[1.05] transition-colors duration-500 ${
                       isOpen ? "text-ink" : "text-ink/75 group-hover:text-ink"
                     }`}
                   >
                     {s.title}
                   </h3>
-                  <span className="hidden lg:block lg:col-span-3 text-[10px] uppercase tracking-[0.2em] text-smoke">
+                  <span className="hidden lg:block lg:col-span-3 text-[11px] uppercase tracking-[0.2em] text-smoke">
                     {isOpen ? "Close" : "Expand"}
                   </span>
                   <span className="col-span-2 lg:col-span-1 flex justify-end">
@@ -171,21 +170,21 @@ export default function Services() {
                   <div className="overflow-hidden">
                     <div className="grid grid-cols-12 gap-4 lg:gap-6 px-2 lg:px-5 pb-9">
                       <div className="col-start-3 col-span-10 lg:col-start-2 lg:col-span-7">
-                        <p className="text-[15px] lg:text-[17px] leading-[1.55] text-ink/85 mb-6 text-balance">
+                        <p className="text-[16px] lg:text-[18px] leading-[1.6] text-ink/85 mb-6 prose-j">
                           {s.blurb}
                         </p>
                       </div>
                       <div className="col-start-3 col-span-10 lg:col-start-9 lg:col-span-4">
-                        <p className="text-[10px] uppercase tracking-[0.24em] text-smoke mb-3">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-smoke mb-3">
                           What&rsquo;s included
                         </p>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2.5">
                           {s.bullets.map((b, j) => (
                             <li
                               key={j}
-                              className="flex gap-3 text-[12.5px] leading-[1.55] text-ink/80"
+                              className="flex gap-3 text-[14px] leading-[1.55] text-ink/85"
                             >
-                              <span className="mt-2 w-1 h-1 rounded-full bg-amber shrink-0" />
+                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
                               {b}
                             </li>
                           ))}

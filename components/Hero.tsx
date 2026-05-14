@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[100svh] flex flex-col pt-[88px] pb-6 lg:pt-[96px] lg:pb-8 overflow-hidden grain"
+      className="relative min-h-[100svh] flex flex-col pt-[100px] pb-6 lg:pt-[112px] lg:pb-8 overflow-hidden grain"
     >
       {/* Decorative grid lines */}
       <div className="absolute inset-0 pointer-events-none">
@@ -76,17 +76,16 @@ export default function Hero() {
         {/* MIDDLE: massive headline — full width, vertically centered */}
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="font-display tracking-ultra leading-[0.86] -mx-1">
-            <span className="block text-[15.5vw] sm:text-[13.5vw] lg:text-[11vw] xl:text-[10.2vw] font-medium">
+            <span className="block text-[14.5vw] sm:text-[12.5vw] lg:text-[10.5vw] xl:text-[9.8vw] font-medium">
               Steady hands
             </span>
-            <span className="block text-[15.5vw] sm:text-[13.5vw] lg:text-[11vw] xl:text-[10.2vw] font-medium">
+            <span className="block text-[14.5vw] sm:text-[12.5vw] lg:text-[10.5vw] xl:text-[9.8vw] font-medium">
               for{" "}
               <span className="relative inline-flex italic font-light">
                 <span className="relative">
                   <span
                     key={wordIdx}
-                    className="inline-block animate-[fadeUp_0.7s_cubic-bezier(0.16,1,0.3,1)]"
-                    style={{ color: "var(--amber)" }}
+                    className="inline-block animate-[fadeUp_0.7s_cubic-bezier(0.16,1,0.3,1)] text-amber"
                   >
                     {ROTATING_WORDS[wordIdx]}
                   </span>
@@ -102,13 +101,14 @@ export default function Hero() {
         <div className="mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end">
           {/* Lede */}
           <div className="lg:col-span-4">
-            <p className="text-[10px] uppercase tracking-[0.24em] text-smoke mb-3">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-smoke mb-3">
               ⌖ &nbsp;The practice
             </p>
-            <p className="text-[14px] lg:text-[15px] leading-[1.55] text-ink/80 text-balance">
-              We are a small, deliberate firm of chartered accountants, GST
-              specialists and advisors — built around one belief: that financial
-              clarity should feel like quiet confidence, not a quarterly scramble.
+            <p className="text-[15px] lg:text-[17px] leading-[1.6] text-ink/85 prose-j max-w-[440px]">
+              A thirteen-year-old chartered accountancy firm in Hyderabad,
+              steering businesses and individuals through audit, taxation, GST
+              and compliance with the same patient rigour we'd bring to our own
+              books.
             </p>
           </div>
 
@@ -120,11 +120,11 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-ink text-bone text-[12px] tracking-tight hover:bg-amber hover:text-ink transition-all duration-500"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-ink text-bone text-[14px] tracking-tight hover:bg-amber hover:text-ink transition-all duration-500"
               >
                 Speak with the firm
                 <span className="relative w-4 h-4 rounded-full bg-bone/15 group-hover:bg-ink/15 flex items-center justify-center transition-colors duration-500">
-                  <svg width="9" height="9" viewBox="0 0 12 12" fill="none">
+                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                     <path
                       d="M2 6h8M6 2l4 4-4 4"
                       stroke="currentColor"
@@ -137,7 +137,7 @@ export default function Hero() {
               </a>
               <a
                 href="#services"
-                className="group inline-flex items-center gap-2 px-2 py-3 text-[12px] tracking-tight border-b border-ink/30 hover:border-ink transition-colors duration-300"
+                className="group inline-flex items-center gap-2 px-2 py-3 text-[14px] tracking-tight border-b border-ink/30 hover:border-ink transition-colors duration-300"
               >
                 See our services
                 <svg
@@ -161,12 +161,12 @@ export default function Hero() {
 
           {/* Stats */}
           <div className="lg:col-span-4 lg:col-start-9 flex flex-col items-start lg:items-end gap-4">
-            <p className="text-[10px] uppercase tracking-[0.24em] text-smoke">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-smoke">
               ⌖ &nbsp;A decade, in numbers
             </p>
             <div className="grid grid-cols-3 gap-5 w-full lg:w-auto">
               {[
-                { v: "12+", k: "Years" },
+                { v: "13+", k: "Years" },
                 { v: "20.5K+", k: "Engagements" },
                 { v: "07", k: "Disciplines" },
               ].map((s, i) => (
@@ -174,10 +174,10 @@ export default function Hero() {
                   key={i}
                   className="lg:text-right border-l lg:border-l-0 lg:border-r last:border-r-0 border-ink/15 lg:pr-4 lg:last:pr-0 pl-4 lg:pl-0 first:pl-0 first:border-l-0"
                 >
-                  <div className="text-ink text-[22px] lg:text-[26px] font-medium tracking-tight leading-none">
+                  <div className="text-ink text-[26px] lg:text-[32px] font-medium tracking-tight leading-none">
                     {s.v}
                   </div>
-                  <div className="mt-1.5 text-[10px] uppercase tracking-[0.18em] text-smoke">
+                  <div className="mt-2 text-[11px] uppercase tracking-[0.2em] text-smoke">
                     {s.k}
                   </div>
                 </div>

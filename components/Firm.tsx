@@ -26,25 +26,25 @@ export default function Firm() {
               />
 
               {/* meta strip */}
-              <div className="absolute top-4 right-4 flex flex-col items-end gap-1 text-[9px] uppercase tracking-[0.24em] text-bone/85">
+              <div className="absolute top-4 right-4 flex flex-col items-end gap-1 text-[10px] uppercase tracking-[0.24em] text-bone/90">
                 <span>Founder</span>
                 <span>F-2012</span>
               </div>
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                <div className="text-[9px] uppercase tracking-[0.24em] text-bone/85">
+                <div className="text-[10px] uppercase tracking-[0.24em] text-bone/90">
                   Hyderabad &nbsp;·&nbsp; IND
                 </div>
-                <div className="text-[9px] uppercase tracking-[0.24em] text-bone/85">
+                <div className="text-[10px] uppercase tracking-[0.24em] text-bone/90">
                   ICAI Member
                 </div>
               </div>
             </div>
 
             <div className="mt-5 flex items-baseline justify-between">
-              <h3 className="font-display text-[22px] tracking-tightest font-medium">
+              <h3 className="font-display text-[24px] tracking-tightest font-medium">
                 CA Muneer Ahmed
               </h3>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-smoke">
+              <span className="text-[11px] uppercase tracking-[0.18em] text-smoke">
                 Founding Partner
               </span>
             </div>
@@ -52,7 +52,7 @@ export default function Firm() {
 
           {/* Body */}
           <div className="lg:col-span-6 lg:col-start-7">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-smoke mb-5">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-smoke mb-5">
               ⌖ &nbsp;004 &nbsp;/&nbsp; The Firm
             </p>
             <h2 className="font-display text-[40px] sm:text-[52px] lg:text-[64px] leading-[0.95] tracking-tightest font-medium mb-10">
@@ -63,34 +63,35 @@ export default function Firm() {
               </span>
             </h2>
 
-            <div className="space-y-5 text-[15px] lg:text-[16px] leading-[1.6] text-ink/80 text-balance">
+            <div className="space-y-5 text-[16px] lg:text-[17px] leading-[1.65] text-ink/85 prose-j">
               <p>
                 Muneer &amp; Associates was founded in 2012 in Hyderabad with a
-                small ambition: to be the kind of chartered accountancy firm
-                that returns calls, files on time, and explains the why
-                alongside the what.
+                big vision — to build the kind of chartered accountancy firm
+                that answers when you call, files before the deadline, and
+                explains the reasoning behind every recommendation it makes.
               </p>
               <p>
-                Twelve years on, the firm has grown into a senior-led practice
-                of qualified chartered accountants and GST specialists, serving
-                everyone from first-time founders to multi-entity groups. The
-                ethos hasn't changed — it has only deepened.
+                Thirteen years on, the firm has grown into a senior-led
+                practice of qualified chartered accountants and GST
+                specialists, serving everyone from first-time founders to
+                multi-entity groups. The ethos hasn&rsquo;t changed; it has
+                only deepened.
               </p>
               <p>
-                We work in industries we can speak about credibly, take on
-                engagements we can deliver excellently, and decline the rest.
-                It's a slow way to build a firm. It's also the only one we
-                know.
+                We work in industries we can speak about credibly, accept
+                engagements we can deliver excellently, and politely decline
+                the rest. It is a measured way to build a firm. It is also
+                the only way we know.
               </p>
             </div>
 
             {/* Pull quote */}
             <figure className="mt-12 pl-6 border-l-2 border-amber">
-              <blockquote className="font-display text-[20px] lg:text-[24px] leading-[1.3] tracking-tightest italic font-light text-balance">
-                &ldquo;Numbers never lie. Our job is to make sure they&rsquo;re
+              <blockquote className="font-display text-[22px] lg:text-[26px] leading-[1.3] tracking-tightest italic font-light text-balance">
+                &ldquo;Numbers never lie. Our work is to make sure they are
                 never misheard either.&rdquo;
               </blockquote>
-              <figcaption className="mt-4 text-[10px] uppercase tracking-[0.22em] text-smoke">
+              <figcaption className="mt-4 text-[11px] uppercase tracking-[0.22em] text-smoke">
                 — CA Muneer Ahmed, Founding Partner
               </figcaption>
             </figure>
@@ -104,10 +105,10 @@ export default function Firm() {
                 { k: "ITD", v: "Authorised Income Tax Return Intermediaries" },
               ].map((c) => (
                 <div key={c.k} className="bg-bone p-5">
-                  <div className="font-display text-[22px] tracking-tightest font-medium mb-1.5 text-amber-dark">
+                  <div className="font-display text-[24px] tracking-tightest font-medium mb-2 text-amber-dark">
                     {c.k}
                   </div>
-                  <div className="text-[11px] leading-[1.5] text-ink/70">
+                  <div className="text-[12px] leading-[1.55] text-ink/75">
                     {c.v}
                   </div>
                 </div>

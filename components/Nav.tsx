@@ -32,16 +32,16 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-        <div className="flex items-center justify-between h-[64px]">
+        <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <a href="#top" className="group flex items-center gap-3">
-            <div className="relative h-8 w-auto flex items-center">
+            <div className="relative h-11 w-auto flex items-center">
               <Image
                 src="/logo.png"
                 alt="Muneer & Associates"
-                width={140}
-                height={36}
-                className="h-8 w-auto object-contain"
+                width={180}
+                height={48}
+                className="h-11 w-auto object-contain"
                 priority
               />
             </div>
@@ -53,10 +53,10 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative px-3.5 py-2 text-[12px] tracking-tight text-ink/70 hover:text-ink transition-colors duration-300 group"
+                className="relative px-4 py-2.5 text-[14px] tracking-tight text-ink/75 hover:text-ink transition-colors duration-300 group"
               >
                 {link.label}
-                <span className="absolute left-3.5 right-3.5 bottom-1 h-px bg-ink scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                <span className="absolute left-4 right-4 bottom-1.5 h-px bg-ink scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               </a>
             ))}
           </nav>
@@ -68,7 +68,7 @@ export default function Nav() {
             </div>
             <a
               href="#contact"
-              className="hidden md:inline-flex group items-center gap-2 px-4 py-2 rounded-full bg-ink text-bone text-[12px] tracking-tight hover:bg-amber hover:text-ink transition-all duration-500"
+              className="hidden md:inline-flex group items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-bone text-[13.5px] tracking-tight hover:bg-amber hover:text-ink transition-all duration-500"
             >
               Book a consult
               <svg
@@ -122,7 +122,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="py-3 text-[16px] tracking-tight border-b border-ink/[0.06]"
+              className="py-3.5 text-[18px] tracking-tight border-b border-ink/[0.06]"
             >
               {link.label}
             </a>
@@ -130,7 +130,7 @@ export default function Nav() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-4 inline-flex items-center justify-center px-5 py-3 rounded-full bg-ink text-bone text-[13px]"
+            className="mt-5 inline-flex items-center justify-center px-5 py-3 rounded-full bg-ink text-bone text-[14px]"
           >
             Book a consult →
           </a>

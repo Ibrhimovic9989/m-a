@@ -114,6 +114,14 @@ html, body {
     opacity: 1;
     transform: translateY(0);
   }
+
+  .prose-j {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
 }
 
 html {
