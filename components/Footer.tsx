@@ -14,10 +14,10 @@ export default function Footer() {
         {/* Columns */}
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10">
           <div className="col-span-2 lg:col-span-4">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-3">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-4">
               The Practice
             </p>
-            <p className="text-[13.5px] leading-[1.65] text-bone/70 max-w-[340px]">
+            <p className="text-[15.5px] leading-[1.7] text-bone/75 max-w-[360px]">
               A Hyderabad-based chartered accountant firm simplifying financial
               and compliance complexities for businesses and individuals — in
               practice since 2012.
@@ -25,10 +25,10 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2 lg:col-start-6">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-3">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-4">
               Services
             </p>
-            <ul className="space-y-2 text-[13px] text-bone/80">
+            <ul className="space-y-2.5 text-[15px] text-bone/85">
               <li><a href="#services" className="hover:text-amber-soft transition-colors">Audit</a></li>
               <li><a href="#services" className="hover:text-amber-soft transition-colors">Taxation</a></li>
               <li><a href="#services" className="hover:text-amber-soft transition-colors">GST</a></li>
@@ -38,10 +38,10 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-3">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-4">
               Firm
             </p>
-            <ul className="space-y-2 text-[13px] text-bone/80">
+            <ul className="space-y-2.5 text-[15px] text-bone/85">
               <li><a href="#firm" className="hover:text-amber-soft transition-colors">About</a></li>
               <li><a href="#approach" className="hover:text-amber-soft transition-colors">Approach</a></li>
               <li><a href="#knowledge" className="hover:text-amber-soft transition-colors">Knowledge</a></li>
@@ -51,10 +51,10 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-3">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-bone/45 mb-4">
               Connect
             </p>
-            <ul className="space-y-2 text-[13px] text-bone/80">
+            <ul className="space-y-2.5 text-[15px] text-bone/85">
               <li>
                 <a
                   href="https://www.linkedin.com/company/muneer-associates"
@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-bone/10 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[12.5px] text-bone/55">
+        <div className="border-t border-bone/10 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[14px] text-bone/65">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>© {new Date().getFullYear()} Muneer &amp; Associates</span>
             <span className="hidden md:inline w-1 h-1 rounded-full bg-bone/30" />

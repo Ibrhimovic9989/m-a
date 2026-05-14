@@ -63,7 +63,7 @@ export default function Firm() {
               </span>
             </h2>
 
-            <div className="space-y-5 text-[16px] lg:text-[17px] leading-[1.65] text-ink/85 prose-j">
+            <div className="space-y-6 text-[17px] lg:text-[19px] leading-[1.7] text-ink/85 prose-j">
               <p>
                 Muneer &amp; Associates was founded in 2012 in Hyderabad with a
                 big vision — to build the kind of chartered accountancy firm
@@ -104,11 +104,11 @@ export default function Firm() {
                 { k: "MCA", v: "Registered for ROC and Secretarial filings" },
                 { k: "ITD", v: "Authorised Income Tax Return Intermediaries" },
               ].map((c) => (
-                <div key={c.k} className="bg-bone p-5">
-                  <div className="font-display text-[24px] tracking-tightest font-medium mb-2 text-amber-dark">
+                <div key={c.k} className="bg-bone p-6">
+                  <div className="font-display text-[26px] tracking-tightest font-medium mb-2 text-amber-dark">
                     {c.k}
                   </div>
-                  <div className="text-[12px] leading-[1.55] text-ink/75">
+                  <div className="text-[13.5px] leading-[1.55] text-ink/80">
                     {c.v}
                   </div>
                 </div>

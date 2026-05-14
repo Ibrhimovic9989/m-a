@@ -104,7 +104,7 @@ export default function Hero() {
             <p className="text-[11px] uppercase tracking-[0.24em] text-smoke mb-3">
               ⌖ &nbsp;The practice
             </p>
-            <p className="text-[15px] lg:text-[17px] leading-[1.6] text-ink/85 prose-j max-w-[440px]">
+            <p className="text-[17px] lg:text-[18.5px] leading-[1.65] text-ink/85 prose-j max-w-[460px]">
               A thirteen-year-old chartered accountancy firm in Hyderabad,
               steering businesses and individuals through audit, taxation, GST
               and compliance with the same patient rigour we'd bring to our own

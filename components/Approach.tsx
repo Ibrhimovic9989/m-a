@@ -57,7 +57,7 @@ export default function Approach() {
             </h2>
           </div>
           <div className="lg:col-span-4 lg:col-start-9 flex items-end">
-            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-bone/75 prose-j">
+            <p className="text-[17px] lg:text-[18.5px] leading-[1.65] text-bone/80 prose-j">
               Good accountancy is, at its best, invisible work — returns filed
               without drama, books closed cleanly, audits delivered on the day
               they were promised. That kind of quiet excellence isn&rsquo;t
@@ -86,7 +86,7 @@ export default function Approach() {
                 <h3 className="font-display text-[34px] lg:text-[42px] leading-[0.95] tracking-tightest font-medium mb-4 text-bone">
                   {s.title}
                 </h3>
-                <p className="text-[14.5px] leading-[1.6] text-bone/75 prose-j">
+                <p className="text-[16px] leading-[1.6] text-bone/80 prose-j">
                   {s.body}
                 </p>
               </div>

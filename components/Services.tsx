@@ -106,7 +106,7 @@ export default function Services() {
             </h2>
           </div>
           <div className="lg:col-span-4 lg:col-start-9 flex items-end">
-            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-ink/80 prose-j">
+            <p className="text-[17px] lg:text-[18.5px] leading-[1.65] text-ink/85 prose-j">
               Every practice area is led by experienced personnel with a decade
               of operating context — so the advice you receive is considered,
               not outsourced.
@@ -170,21 +170,21 @@ export default function Services() {
                   <div className="overflow-hidden">
                     <div className="grid grid-cols-12 gap-4 lg:gap-6 px-2 lg:px-5 pb-9">
                       <div className="col-start-3 col-span-10 lg:col-start-2 lg:col-span-7">
-                        <p className="text-[16px] lg:text-[18px] leading-[1.6] text-ink/85 mb-6 prose-j">
+                        <p className="text-[18px] lg:text-[20px] leading-[1.6] text-ink/85 mb-7 prose-j">
                           {s.blurb}
                         </p>
                       </div>
                       <div className="col-start-3 col-span-10 lg:col-start-9 lg:col-span-4">
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-smoke mb-3">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-smoke mb-4">
                           What&rsquo;s included
                         </p>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-3">
                           {s.bullets.map((b, j) => (
                             <li
                               key={j}
-                              className="flex gap-3 text-[14px] leading-[1.55] text-ink/85"
+                              className="flex gap-3 text-[16px] leading-[1.55] text-ink/85"
                             >
-                              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
+                              <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-amber shrink-0" />
                               {b}
                             </li>
                           ))}

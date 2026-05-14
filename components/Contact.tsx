@@ -54,7 +54,7 @@ export default function Contact() {
             </h2>
           </div>
           <div className="lg:col-span-4 flex items-end">
-            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-bone/75 prose-j">
+            <p className="text-[17px] lg:text-[18.5px] leading-[1.65] text-bone/80 prose-j">
               Pick a date. Pick a time. A senior partner walks through it with
               you. The booking, a calendar invite and an automated reminder
               follow — in that order.
@@ -77,7 +77,7 @@ export default function Contact() {
                 loading="lazy"
               />
             </div>
-            <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-bone/45 flex items-center gap-2">
+            <p className="mt-4 text-[12px] uppercase tracking-[0.22em] text-bone/55 flex items-center gap-2.5">
               <span className="w-6 h-px bg-bone/30" />
               Booking handled by Cal.com &nbsp;·&nbsp; Calendar invite + reminder
               follow automatically
@@ -103,13 +103,13 @@ export default function Contact() {
                 </svg>
               </span>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.24em] text-amber-soft mb-1">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-amber-soft mb-1.5">
                   ⌖ Brochure
                 </p>
-                <p className="text-[14.5px] tracking-tight leading-[1.4] text-bone">
+                <p className="text-[16px] tracking-tight leading-[1.4] text-bone">
                   Download the firm&rsquo;s corporate profile
                 </p>
-                <p className="text-[12px] text-bone/55 mt-1 leading-[1.5]">
+                <p className="text-[13.5px] text-bone/65 mt-1.5 leading-[1.55]">
                   A bird&rsquo;s-eye view of every service we offer.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function Contact() {
               <p className="text-[11px] uppercase tracking-[0.24em] text-amber-soft mb-3">
                 ⌖ Head Office
               </p>
-              <p className="text-[15px] leading-[1.6] text-bone/85">
+              <p className="text-[16.5px] leading-[1.65] text-bone/85">
                 Office No. 414, 4<sup>th</sup> Floor,<br />
                 Downtown Mall, Lakdi Ka Pul,<br />
                 Hyderabad, Telangana — IND
@@ -130,14 +130,14 @@ export default function Contact() {
               <p className="text-[11px] uppercase tracking-[0.24em] text-amber-soft mb-3">
                 ⌖ Speak directly
               </p>
-              <ul className="space-y-1.5">
+              <ul className="space-y-2">
                 {PHONES.map((p) => (
                   <li key={p}>
                     <a
                       href={`tel:${p.replace(/\s/g, "")}`}
-                      className="group inline-flex items-center gap-3 text-[15px] text-bone/85 hover:text-amber-soft transition-colors duration-300"
+                      className="group inline-flex items-center gap-3 text-[16.5px] text-bone/85 hover:text-amber-soft transition-colors duration-300"
                     >
-                      <span className="font-mono text-[11px] text-bone/45 group-hover:text-amber-soft transition-colors duration-300">
+                      <span className="font-mono text-[12px] text-bone/45 group-hover:text-amber-soft transition-colors duration-300">
                         →
                       </span>
                       {p}
@@ -153,7 +153,7 @@ export default function Contact() {
               </p>
               <a
                 href="mailto:info@muneerassociates.in"
-                className="text-[17px] lg:text-[19px] tracking-tight text-bone hover:text-amber-soft transition-colors duration-300 border-b border-bone/20 hover:border-amber-soft pb-1"
+                className="text-[18px] lg:text-[20px] tracking-tight text-bone hover:text-amber-soft transition-colors duration-300 border-b border-bone/20 hover:border-amber-soft pb-1"
               >
                 info@muneerassociates.in
               </a>
@@ -163,7 +163,7 @@ export default function Contact() {
               <p className="text-[11px] uppercase tracking-[0.24em] text-amber-soft mb-3">
                 ⌖ Hours
               </p>
-              <p className="text-[14px] leading-[1.6] text-bone/75">
+              <p className="text-[15.5px] leading-[1.65] text-bone/80">
                 Mon — Sat &nbsp;·&nbsp; 10:00 — 19:00 IST<br />
                 Sundays &amp; public holidays — by appointment
               </p>

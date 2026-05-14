@@ -48,7 +48,7 @@ export default function Knowledge() {
             </h2>
           </div>
           <div className="lg:col-span-5 lg:col-start-8 flex items-end">
-            <p className="text-[15px] lg:text-[16px] leading-[1.6] text-ink/80 prose-j">
+            <p className="text-[17px] lg:text-[18.5px] leading-[1.65] text-ink/85 prose-j">
               The same calculators, bare acts, bulletins and due-date trackers
               we use internally — published openly, because financial knowledge
               works better when it isn&rsquo;t gatekept.
@@ -73,14 +73,14 @@ export default function Knowledge() {
                 </span>
               </div>
 
-              <h3 className="font-display text-[24px] lg:text-[30px] leading-[1.1] tracking-tightest font-medium mb-3 text-balance">
+              <h3 className="font-display text-[26px] lg:text-[32px] leading-[1.1] tracking-tightest font-medium mb-4 text-balance">
                 {r.title}
               </h3>
-              <p className="text-[14.5px] leading-[1.6] text-ink/75 mb-6 prose-j">
+              <p className="text-[16px] leading-[1.6] text-ink/80 mb-7 prose-j">
                 {r.body}
               </p>
 
-              <div className="flex items-center gap-3 text-[13px] tracking-tight">
+              <div className="flex items-center gap-3 text-[14px] tracking-tight">
                 <span className="border-b border-ink/30 group-hover:border-ink transition-colors duration-300 pb-0.5">
                   {r.cta}
                 </span>
