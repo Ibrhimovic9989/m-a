@@ -247,7 +247,6 @@ export const SERVICES_CATALOG: ServiceCategory[] = [
     blurb:
       "Higher-touch engagements: cross-border tax, IFRS implementation, GCC and US compliance, family-office wealth and investment advisory. Senior-partner led, by arrangement.",
     items: [
-      { name: "Continuum Business Solutions" },
       { name: "Overseas Business Consulting" },
       { name: "IFRS Implementation" },
       { name: "Forensic Audit & Fraud Detection" },
