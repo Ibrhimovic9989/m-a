@@ -21,14 +21,28 @@
 }
 
 [data-theme="light"] {
-  --bone: 250 250 248;
-  --ivory: 255 255 255;
-  --ink: 14 14 16;
-  --ash: 26 26 29;
-  --smoke: 107 107 107;
-  --amber: 168 110 38;
-  --amber-soft: 210 161 105;
-  --amber-dark: 102 67 22;
+  /* Slight warmth on the page so opacity-based text doesn't wash out;
+     deeper ink, smoke and amber for stronger contrast on bright bg. */
+  --bone: 248 246 241;
+  --ivory: 253 252 248;
+  --ink: 8 8 10;
+  --ash: 20 20 22;
+  --smoke: 72 66 58;
+  --amber: 146 92 26;
+  --amber-soft: 194 144 88;
+  --amber-dark: 82 52 14;
+}
+
+/* Borders, hairlines and faint ink utilities feel anaemic on pure-white
+   backgrounds — bump their floor opacity for the light theme only. */
+[data-theme="light"] .vline {
+  background: linear-gradient(to bottom, transparent, rgb(var(--ink) / 0.28), transparent);
+}
+[data-theme="light"] .hline {
+  background: linear-gradient(to right, transparent, rgb(var(--ink) / 0.3), transparent);
+}
+[data-theme="light"] .grain::after {
+  opacity: 0.08;
 }
 
 [data-theme="dark"] {
